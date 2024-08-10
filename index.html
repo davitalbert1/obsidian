@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obsidian</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Modify the sidebar to display notes -->
+        <div class="sidebar">
+            <div class="logo">
+                <img src="obsidian-logo.svg" alt="Obsidian Logo">
+            </div>
+            <div class="nav">
+                <ul>
+                    <!-- Adicione um evento de clique ao item de menu Settings -->
+                    <li><a href="#" id="settings-link">Settings</a></li>
+
+                    <!-- Crie uma janela modal para as opções de tema -->
+                    <div class="modal" id="settings-modal">
+                        <div class="modal-content">
+                            <h2>Settings</h2>
+                            <label>Theme:</label>
+                            <select id="theme-select">
+                                <option value="light">Light</option>
+                                <option value="dark">Dark</option>
+                            </select>
+                            <button id="save-theme-btn">Save</button>
+                            <button id="close-modal-btn">Close</button>
+                        </div>
+                    </div>
+
+                    <li><button id="new-note-button">New Note</button></li>
+                </ul>
+                <!-- Add a notes list to the sidebar -->
+                <div class="notes-list">
+                    <h2>Notes</h2>
+                    <ul id="notes-list"></ul>
+                </div>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="note-list">
+                <h2>Notes</h2>
+                <ul id="note-list"></ul>
+            </div>
+            <div class="note-editor">
+                <input type="text" id="new-note-input" placeholder="Enter note title">
+                <br><br>
+                <textarea placeholder="Start writing..."></textarea>
+                <button>Save</button>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

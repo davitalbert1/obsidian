@@ -1,0 +1,334 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.app-container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+}
+
+.logo {
+    margin-bottom: 20px;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+}
+
+.nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav li {
+    margin-bottom: 10px;
+}
+
+.nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav a:hover {
+    color: #ccc;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.note-list {
+    margin-bottom: 20px;
+}
+
+.note-list h2 {
+    margin-top: 0;
+}
+
+.note-list ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.note-list li {
+    margin-bottom: 10px;
+}
+
+.note-list a {
+    color: #337ab7;
+    text-decoration: none;
+}
+
+.note-list a:hover {
+    color: #23527c;
+}
+
+.note-editor {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.note-editor h2 {
+    margin-top: 0;
+}
+
+.note-editor textarea {
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.note-editor button {
+    background-color: #337ab7;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.note-editor button:hover {
+    background-color: #23527c;
+}
+
+.btn {
+    border: none;
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .btn-primary {
+    background-color: #337ab7;
+    color: #fff;
+  }
+  
+  .btn-danger {
+    background-color: #d9534f;
+    color: #fff;
+  }
+
+  #new-note-button {
+    background-color: #4CAF50; /* cor de fundo do botão */
+    color: #ffffff; /* cor do texto do botão */
+    border: none; /* remove borda do botão */
+    padding: 10px 20px; /* adiciona padding ao botão */
+    font-size: 16px; /* tamanho do texto do botão */
+    cursor: pointer; /* muda o cursor para uma mão quando o usuário passa o mouse sobre o botão */
+    border-radius: 5px; /* adiciona um efeito de arredondamento ao botão */
+  }
+  
+  #new-note-button:hover {
+    background-color: #3e8e41; /* muda a cor de fundo do botão quando o usuário passa o mouse sobre ele */
+  }
+
+  /* Estiliza a janela modal */
+.modal {
+    display: none; /* Oculta a janela modal por padrão */
+    position: fixed; /* Posiciona a janela modal no centro da tela */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 300px;
+  }
+  
+  /* Estiliza o tema escuro */
+  .dark-theme {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  /* Estiliza o tema claro */
+  .light-theme {
+    background-color: #fff;
+    color: #333;
+  }
+
+  .modal {
+    transition: opacity 0.5s;
+  }
+  
+  .modal.fade-out {
+    opacity: 0;
+  }
+
+  /* Estilizar botão de salvar tema */
+#save-theme-btn {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #save-theme-btn:hover {
+    background-color: #3e8e41;
+  }
+  
+  /* Estilizar botão de fechar */
+  #close-modal-btn {
+    background-color: #fff;
+    color: #333;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #close-modal-btn:hover {
+    background-color: #f7f7f7;
+  }
+  
+  /* Estilizar botão de criar nova nota */
+  #new-note-button {
+    background-color: #337ab7;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #new-note-button:hover {
+    background-color: #23527c;
+  }
+  
+  /* Estilizar botão de salvar nota */
+  .note-editor button {
+    background-color: #337ab7;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .note-editor button:hover {
+    background-color: #23527c;
+  }
+  
+  .note-editor {
+    position: relative;
+  }
+  
+  .note-editor textarea {
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .note-editor .image-container {
+    position: absolute;
+    top: 220px; /* altura do textarea + padding */
+    left: 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .note-editor .image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  /* Estilizar botão de deletar nota */
+  .btn-danger {
+    background-color: #d9534f;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c9302c;
+  }
+  
+  /* Estilizar botão de editar nota */
+  .btn-primary {
+    background-color: #337ab7;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn-primary:hover {
+    background-color: #23527c;
+  }
+
+  /* Add styles to the settings link */
+#settings-link {
+    color: #333; /* text color */
+    text-decoration: none; /* remove underline */
+    padding: 10px; /* add some padding */
+    border-radius: 5px; /* add a slight rounded corner */
+    background-color: #f7f7f7; /* light gray background */
+    transition: background-color 0.2s ease; /* add a transition effect */
+  }
+  
+  #settings-link:hover {
+    background-color: #e7e7e7; /* darker gray background on hover */
+    cursor: pointer; /* change cursor to a pointing hand */
+  }
+
+  #new-note-input {
+    width: 80%; /* diminuído de 100% para 80% */
+    padding: 10px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Adicionei um efeito de papel amarelado */
+    background-image: linear-gradient(to bottom, #f5f5dc, #fff);
+  }
+  
+  #new-note-input:focus {
+    border-color: #337ab7;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    /* Adicionei um efeito de sombra */
+    outline: none;
+  }
+  
+  #new-note-input::placeholder {
+    color: #999;
+    font-style: italic;
+  }
+
+  .image-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.image-container img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
